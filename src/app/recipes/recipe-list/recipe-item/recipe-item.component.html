@@ -1,3 +1,14 @@
-<p>
-  recipe-item works!
-</p>
+<div class="card" style="width: 22rem;" >
+  <div class="row card-body ">
+    <div class="col-md-6">
+    <h5 class="card-title">{{ recipeItemComp.name }}</h5>
+    <p class="card-text">{{ recipeItemComp.description }}</p>
+    </div>
+    <div class="col-md-6">
+    <img [src]="recipeItemComp.imagePath"
+         alt="{{ recipeItemComp.name }}"
+         class="rounded float-left"
+         style="max-height: 50px">
+     </div>
+  </div>
+</div>

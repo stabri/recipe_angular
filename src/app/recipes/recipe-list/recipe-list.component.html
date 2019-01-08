@@ -5,20 +5,7 @@
 </div>
 <hr>
 <div class="row">
-  <div class="card" style="width: 22rem;" *ngFor="let recipe of recipes">
-    <div class="row card-body ">
-      <div class="col-md-6">
-      <h5 class="card-title">{{ recipe.name }}</h5>
-      <p class="card-text">{{ recipe.description }}</p>
-      </div>
-      <div class="col-md-6">
-      <img [src]="recipe.imagePath"
-           alt="{{ recipe.name }}"
-           class="rounded float-left"
-           style="max-height: 50px">
-       </div>
-    </div>
-
+  <app-recipe-item
+    *ngFor="let recipeEl of recipes"
+    [recipeItemComp]="recipeEl"></app-recipe-item>
   </div>
-  <app-recipe-item></app-recipe-item>
-</div>

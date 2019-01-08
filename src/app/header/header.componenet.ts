@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: 'app-header',
@@ -6,6 +6,12 @@ import { Component } from "@angular/core";
 })
 
 export class HeaderComponent {
+  @Output() selectedFeature = new EventEmitter<String>();
+
   constructor(){
+  }
+
+  onSelect(value: string){
+    this.selectedFeature.emit(value);
   }
 }
