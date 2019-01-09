@@ -13,6 +13,8 @@ import { BasicHighlightDirective } from './shared-directives/basic-highlight.dir
 import { BetterHightlightsDirective } from './shared-directives/better-hightlights.directive';
 import { HightlightHostBindingDirective } from './shared-directives/hightlight-host-binding.directive';
 import { CodeExamplesComponent } from './code-examples/code-examples.component';
+import { UnlessDirective } from './shared-directives/structural-directives/unless.directive';
+import { DropDownDirective } from './shared-directives/structural-directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { CodeExamplesComponent } from './code-examples/code-examples.component';
     BetterHightlightsDirective,
     HightlightHostBindingDirective,
     CodeExamplesComponent,
+    UnlessDirective,
+    DropDownDirective,
   ],
   imports: [
     BrowserModule

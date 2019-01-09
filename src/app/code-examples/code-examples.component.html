@@ -9,3 +9,27 @@
 <p
   appHightlightHostBinding [defaultColor]="'yellow'" [hightLightColor]="'blue'"
 >Style me with my Host binding custom directive with custom property binding</p>
+
+<hr>
+<ul>
+<div *ngFor="let num of numList">
+  <li
+    class="list-group-item"
+    *ngIf="num % 2 === 0"
+    [ngStyle]="{color: 2 % 2 === 0? 'blue': 'red'}"
+    [ngClass]="{sampleClass: 1 + 1 === 2}"
+    > {{ num }}
+  </li>
+</div>
+</ul>
+<hr>
+<ul>
+<p>My structural directive: </p>
+<div *ngFor="let num of numList">
+  <li
+    class="list-group-item"
+    *appUnless="num % 2 === 0"
+    > {{ num }}
+  </li>
+</div>
+</ul>
