@@ -10,7 +10,10 @@
       [recipe]="selectedRecipeProp">
     </app-recipe-detail>
     <ng-template #infoText>
-      <p>Pleas select a recipe</p>
+      <p
+        [ngStyle]="{color: 2 % 2 === 0? 'blue': 'red'}"
+        [ngClass]="{sampleClass: 1 + 1 === 2}">
+        Pleas select a recipe</p>
     </ng-template>
   </div>
 </div>
