@@ -15,6 +15,7 @@ import { HightlightHostBindingDirective } from './shared-directives/hightlight-h
 import { CodeExamplesComponent } from './code-examples/code-examples.component';
 import { UnlessDirective } from './shared-directives/structural-directives/unless.directive';
 import { DropDownDirective } from './shared-directives/structural-directives/dropdown.directive';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { DropDownDirective } from './shared-directives/structural-directives/dro
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
