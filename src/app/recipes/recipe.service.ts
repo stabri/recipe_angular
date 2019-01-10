@@ -1,12 +1,15 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
+@Injectable()
 export class RecipeService {
 
   recipeSelected = new EventEmitter<Recipe>();
 
+  constructor(private shoppingListService: ShoppingListService) {}
 
   private recipes: Recipe[] = [
     new Recipe('Tuna Salat', 'This is a awesome tuna salat',
@@ -21,6 +24,14 @@ export class RecipeService {
     // return copy of recipes array slice()
     return this.recipes.slice();
   }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]){
+    // ingredients.forEach(i => {
+    //   this.shoppingListService.addIngredient(i);
+    // })
+    this.shoppingListService.addIngredients(ingredients);
+  }
+
 
 
 }

@@ -20,4 +20,10 @@ export class ShoppingListService {
     this.newIngredient.emit(this.ingredients.slice());
   }
 
+  addIngredients(ingredients: Ingredient[]){
+    // ...ingredients traansform array into list
+    this.ingredients.push(...ingredients);
+    this.newIngredient.emit(this.ingredients.slice());
+  }
+
 }
