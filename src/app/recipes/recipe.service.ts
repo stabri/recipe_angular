@@ -1,17 +1,20 @@
 import { EventEmitter } from '@angular/core';
 
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 
 export class RecipeService {
 
   recipeSelected = new EventEmitter<Recipe>();
-  
+
 
   private recipes: Recipe[] = [
-    new Recipe('TestRecipe', 'This is a test',
-    'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg'),
-    new Recipe('Recipe2', 'This is a test recipe 2',
-    'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg'),
+    new Recipe('Tuna Salat', 'This is a awesome tuna salat',
+    'https://img.taste.com.au/1jAOXAA_/w720-h480-cfill-q80/taste/2016/11/mediterranean-tuna-salad-31059-1.jpeg',
+    [new Ingredient('Tuna', 200), new Ingredient('Salat', 100), new Ingredient('Tomatoa', 2) ]),
+    new Recipe('Burger', '200g of delitious Beef',
+    'https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg',
+    [new Ingredient('Beef', 200), new Ingredient('Bread', 1), new Ingredient('Tomatoa', 2), new Ingredient('BBQ souce', 25) ]),
   ];
 
   getRecipes(){
