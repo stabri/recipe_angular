@@ -17,6 +17,7 @@ import { UnlessDirective } from './shared-directives/structural-directives/unles
 import { DropDownDirective } from './shared-directives/structural-directives/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AppRoutingModule } from './app-routing.module';
     CodeExamplesComponent,
     UnlessDirective,
     DropDownDirective,
+    RecipeStartComponent,
   ],
   imports: [
     BrowserModule,
