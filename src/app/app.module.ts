@@ -16,6 +16,7 @@ import { CodeExamplesComponent } from './code-examples/code-examples.component';
 import { UnlessDirective } from './shared-directives/structural-directives/unless.directive';
 import { DropDownDirective } from './shared-directives/structural-directives/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     DropDownDirective,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
