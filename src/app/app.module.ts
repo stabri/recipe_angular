@@ -19,6 +19,9 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { AuthService } from './auth-fake.service';
+import { AuthGuard } from './app-route-guard.service';
 
 @NgModule({
   declarations: [
@@ -38,12 +41,13 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     DropDownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

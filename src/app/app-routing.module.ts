@@ -7,6 +7,8 @@ import { CodeExamplesComponent } from './code-examples/code-examples.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { AuthGuard } from './app-route-guard.service';
 
 const appRouts: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -17,7 +19,9 @@ const appRouts: Routes = [
     { path: ':id/edit', component: RecipeEditComponent },
   ]},
   { path: 'examples', component: CodeExamplesComponent},
+  { path: 'examples/:option', canActivate: [AuthGuard], component: CodeExamplesComponent },
   { path: 'shopping-list', component: ShoppingListComponent},
+  { path: '**', component: ErrorPageComponent},
 
 ]
 

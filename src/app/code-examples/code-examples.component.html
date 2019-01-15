@@ -1,5 +1,13 @@
+<div class="row">
+  <button type="button" class="btn btn-primary btnSpace" (click)="onClick(0)">Custom directive</button>
+  <button type="button" class="btn btn-primary btnSpace" (click)="onClick(1)">Attribiute directive</button>
+  <button type="button" class="btn btn-primary btnSpace" (click)="onClick(2)">Structural directive</button>
+  <button type="button" class="btn btn-primary btnSpace" (click)="onLogIn()">LogIn</button>
+  <button type="button" class="btn btn-primary btnSpace" (click)="onLogOut()">LogOut</button>
+</div>
 <hr>
-
+<div *ngIf="activeExample == '0'">
+<ul>
 <p
   appBasicHighlight
 >Style me with my custom directive</p>
@@ -9,9 +17,12 @@
 <p
   appHightlightHostBinding [defaultColor]="'yellow'" [hightLightColor]="'blue'"
 >Style me with my Host binding custom directive with custom property binding</p>
+</ul>
+</div>
 
-<hr>
+<div *ngIf="activeExample == '1'">
 <ul>
+  <p>My attribiute directive: </p>
 <div *ngFor="let num of numList">
   <li
     class="list-group-item"
@@ -22,7 +33,9 @@
   </li>
 </div>
 </ul>
-<hr>
+</div>
+
+<div *ngIf="activeExample == '2'">
 <ul>
 <p>My structural directive: </p>
 <div *ngFor="let num of numList">
@@ -33,3 +46,4 @@
   </li>
 </div>
 </ul>
+</div>

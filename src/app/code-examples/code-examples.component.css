@@ -1,3 +1,7 @@
 .sampleClass {
   background-color: yellow;
 }
+
+.btnSpace {
+  margin-left: 10px;
+}
