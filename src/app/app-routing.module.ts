@@ -10,6 +10,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthGuard } from './app-route-guard.service';
 import { FormComponent } from './code-examples/form/form.component';
+import { FormReactiveComponent } from './code-examples/form-reactive/form-reactive.component';
 
 const appRouts: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -19,8 +20,10 @@ const appRouts: Routes = [
     { path: ':id', component: RecipeDetailComponent },
     { path: ':id/edit', component: RecipeEditComponent },
   ]},
-  { path: 'examples', component: CodeExamplesComponent},
-  { path: 'examples/form', component: FormComponent },
+  { path: 'examples', component: CodeExamplesComponent, children: [
+    { path: 'form', component: FormComponent },
+    { path: 'form-reactive', component: FormReactiveComponent },
+  ]},
   { path: 'examples/:option', canActivate: [AuthGuard], component: CodeExamplesComponent },
   { path: 'shopping-list', component: ShoppingListComponent},
   { path: '**', component: ErrorPageComponent},

@@ -24,6 +24,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthService } from './auth-fake.service';
 import { AuthGuard } from './app-route-guard.service';
 import { FormComponent } from './code-examples/form/form.component';
+import { FormReactiveComponent } from './code-examples/form-reactive/form-reactive.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { FormComponent } from './code-examples/form/form.component';
     RecipeEditComponent,
     ErrorPageComponent,
     FormComponent,
+    FormReactiveComponent,
   ],
   imports: [
     BrowserModule,

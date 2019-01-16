@@ -7,48 +7,37 @@
 </div>
 <hr>
 <div class="row">
-  <button type="button" class="btn btn-outline-dark btnSpace" (click)="onClick('form')">Form example</button>
+  <button type="button" class="btn btn-outline-dark btnSpace" (click)="onClick('form')">Form template-driven</button>
+  <button type="button" class="btn btn-outline-dark btnSpace" (click)="onClick('form-reactive')">Form reactive</button>
 </div>
 <hr>
+<div class="container container-fluid col-12">
+  <router-outlet></router-outlet>
+</div>
 <div *ngIf="activeExample == '0'">
-<ul>
-<p
-  appBasicHighlight
->Style me with my custom directive</p>
-<p
-  appBetterHightlights
->Style me with my BETTER custom directive using Renderer, using HostListener and HostEvents - I can react for events</p>
-<p
-  appHightlightHostBinding [defaultColor]="'yellow'" [hightLightColor]="'blue'"
->Style me with my Host binding custom directive with custom property binding</p>
-</ul>
+  <ul>
+    <p appBasicHighlight>Style me with my custom directive</p>
+    <p appBetterHightlights>Style me with my BETTER custom directive using Renderer, using HostListener and HostEvents - I can react for events</p>
+    <p appHightlightHostBinding [defaultColor]="'yellow'" [hightLightColor]="'blue'">Style me with my Host binding custom directive with custom property binding</p>
+  </ul>
 </div>
 
 <div *ngIf="activeExample == '1'">
-<ul>
-  <p>My attribiute directive: </p>
-<div *ngFor="let num of numList">
-  <li
-    class="list-group-item"
-    *ngIf="num % 2 === 0"
-    [ngStyle]="{color: 2 % 2 === 0? 'blue': 'red'}"
-    [ngClass]="{sampleClass: 1 + 1 === 2}"
-    > {{ num }}
-  </li>
-</div>
-</ul>
+  <ul>
+    <p>My attribiute directive: </p>
+    <div *ngFor="let num of numList">
+      <li class="list-group-item" *ngIf="num % 2 === 0" [ngStyle]="{color: 2 % 2 === 0? 'blue': 'red'}" [ngClass]="{sampleClass: 1 + 1 === 2}"> {{ num }}
+      </li>
+    </div>
+  </ul>
 </div>
 
 <div *ngIf="activeExample == '2'">
-<ul>
-<p>My structural directive: </p>
-<div *ngFor="let num of numList">
-  <li
-    class="list-group-item"
-    *appUnless="num % 2 === 0"
-    > {{ num }}
-  </li>
+  <ul>
+    <p>My structural directive: </p>
+    <div *ngFor="let num of numList">
+      <li class="list-group-item" *appUnless="num % 2 === 0"> {{ num }}
+      </li>
+    </div>
+  </ul>
 </div>
-</ul>
-</div>
-<router-outlet></router-outlet>
