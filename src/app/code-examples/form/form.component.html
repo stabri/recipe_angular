@@ -6,7 +6,7 @@
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" ngModel name="username" required>
         </div>
-        <button class="btn btn-outline-dark" style="margin-bottom: 15px;" type="button">Suggest an Username</button>
+        <button class="btn btn-outline-dark" style="margin-bottom: 15px;" type="button" (click)="suggestName()">Suggest an Username</button>
         <div class="form-check" *ngFor="let gender of genders">
           <input class="form-check-input" type="radio" name="gender" ngModel [value]="gender" required>
           <label class="form-check-label" for="gender">
@@ -34,5 +34,15 @@
       <p>Your reply: {{ answer }}</p>
       <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
     </form>
+  </div>
+</div>
+<div class="row" *ngIf="submitted">
+  <div class="col-xs-12">
+    <h3>Your data: </h3>
+    <p>Name: {{ user.name }} </p>
+    <p>Gender: {{ user.gender }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Question: {{ user.secretQuestion }}</p>
+    <p>Answer: {{ user.answer }}</p>
   </div>
 </div>
