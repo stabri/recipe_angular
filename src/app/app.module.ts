@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.componenet';
@@ -22,6 +23,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthService } from './auth-fake.service';
 import { AuthGuard } from './app-route-guard.service';
+import { FormComponent } from './code-examples/form/form.component';
 
 @NgModule({
   declarations: [
@@ -42,10 +44,12 @@ import { AuthGuard } from './app-route-guard.service';
     RecipeStartComponent,
     RecipeEditComponent,
     ErrorPageComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [ShoppingListService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
