@@ -11,6 +11,8 @@ export class FormComponent implements OnInit {
   @ViewChild('f')signupForm: NgForm;
   defaultQuestion = 'pet';
   answer = '';
+  genders = ['male', 'female'];
+  
   constructor() { }
 
   ngOnInit() {
