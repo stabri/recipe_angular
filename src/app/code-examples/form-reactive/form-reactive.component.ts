@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-form-reactive',
@@ -18,7 +18,8 @@ export class FormReactiveComponent implements OnInit {
         'username': new FormControl(null, Validators.required),
         'email': new FormControl(null, [Validators.required, Validators.email]),
       }),
-      'gender': new FormControl('male')
+      'gender': new FormControl('male'),
+      'hobbies': new FormArray([])
     });
   }
 
@@ -28,5 +29,10 @@ export class FormReactiveComponent implements OnInit {
 
   onClearForm(){
     this.singnUpForm.reset();
+  }
+
+  onAddHobbies(){
+    const control = new FormControl(null, Validators.required);
+    (<FormArray>this.singnUpForm.get('hobbies')).push(control);
   }
 }

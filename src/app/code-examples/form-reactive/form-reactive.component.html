@@ -19,6 +19,13 @@
           {{ gender }}
         </label>
       </div>
+      <div formArrayName="hobbies">
+        <h4>Your Hobbies:</h4>
+        <button type="button" class="btn btn-warning" (click)="onAddHobbies()">Add Hobby</button>
+        <div class="form-group" *ngFor="let hobby of singnUpForm.get('hobbies').controls; let i = index">
+          <input type="text" class="form-control" [formControlName]="i">
+        </div>
+      </div>
       <small class="form-text text-muted" *ngIf="!singnUpForm.valid && singnUpForm.touched">Fill all above data</small>
       <hr>
       <div class="row">
