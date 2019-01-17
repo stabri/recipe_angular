@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.componenet';
@@ -52,6 +52,7 @@ import { FormReactiveComponent } from './code-examples/form-reactive/form-reacti
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [ShoppingListService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
