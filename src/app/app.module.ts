@@ -25,6 +25,7 @@ import { AuthService } from './auth-fake.service';
 import { AuthGuard } from './app-route-guard.service';
 import { FormComponent } from './code-examples/form/form.component';
 import { FormReactiveComponent } from './code-examples/form-reactive/form-reactive.component';
+import { RecipeService } from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { FormReactiveComponent } from './code-examples/form-reactive/form-reacti
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ShoppingListService, AuthService, AuthGuard],
+  providers: [ShoppingListService, AuthService, AuthGuard, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
