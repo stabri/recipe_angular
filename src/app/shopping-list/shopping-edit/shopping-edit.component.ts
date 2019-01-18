@@ -32,18 +32,23 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     );
   }
 
-  onClear(){
-    this.shoppingListForm.reset();
-  }
-
-  onSubmit(){
-    this.shoppingListService.addIngredient(this.getIngredient());
+  onSubmit() {
+    if (this.editMode) {
+      this.shoppingListService.updateIngredient(this.editedItemIndex, this.getIngredient());
+    } else {
+      this.shoppingListService.addIngredient(this.getIngredient());
+    }
     this.onClear();
   }
 
-  onDelete(){
-    this.shoppingListService.removeIngredient(this.getIngredient());
+  onClear() {
+    this.editMode = false;
+    this.shoppingListForm.reset();
+  }
 
+  onDelete() {
+    this.shoppingListService.removeIngredient(this.editedItemIndex);
+    this.onClear();
   }
 
   getIngredient(): Ingredient {
@@ -52,7 +57,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     return new Ingredient(name, amount);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 }

@@ -15,7 +15,7 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
-  getIngredient(index: number){
+  getIngredient(index: number) {
     return this.ingredients[index];
   }
 
@@ -30,12 +30,14 @@ export class ShoppingListService {
     this.newIngredient.next(this.ingredients.slice());
   }
 
-  removeIngredient(ingredient: Ingredient) {
-    const index = this.ingredients.indexOf(ingredient, 0);
-    if (index > -1) {
-      this.ingredients[index].amount -= ingredient.amount;
-      this.newIngredient.next(this.ingredients.slice());
-    }
+  removeIngredient(index: number) {
+    this.ingredients.splice(index, 1);
+    this.newIngredient.next(this.ingredients.slice());
+  }
+
+  updateIngredient(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
+    this.newIngredient.next(this.ingredients.slice());
   }
 
 }
