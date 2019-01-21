@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.componenet';
@@ -29,6 +30,8 @@ import { RecipeService } from './recipes/recipe.service';
 import { PipesComponent } from './code-examples/pipes/pipes.component';
 import { ShortenPipe } from './code-examples/pipes/shorten.pipe';
 import { FilterPipe } from './code-examples/pipes/filter.pipe';
+import { HttpComponent } from './code-examples/http/http.component';
+import { ServersService } from './servers.service';
 
 @NgModule({
   declarations: [
@@ -54,14 +57,16 @@ import { FilterPipe } from './code-examples/pipes/filter.pipe';
     PipesComponent,
     ShortenPipe,
     FilterPipe,
+    HttpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [ShoppingListService, AuthService, AuthGuard, RecipeService],
+  providers: [ShoppingListService, AuthService, AuthGuard, RecipeService, ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
