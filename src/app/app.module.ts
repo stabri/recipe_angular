@@ -27,6 +27,7 @@ import { FormComponent } from './code-examples/form/form.component';
 import { FormReactiveComponent } from './code-examples/form-reactive/form-reactive.component';
 import { RecipeService } from './recipes/recipe.service';
 import { PipesComponent } from './code-examples/pipes/pipes.component';
+import { ShortenPipe } from './code-examples/pipes/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PipesComponent } from './code-examples/pipes/pipes.component';
     FormComponent,
     FormReactiveComponent,
     PipesComponent,
+    ShortenPipe,
   ],
   imports: [
     BrowserModule,
