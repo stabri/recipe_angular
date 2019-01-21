@@ -1,9 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
+      <input type="text" [(ngModel)]="filteredStatus" placeholder="enter status">
+      <br>
+      <button type="button" class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <hr>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let server of servers" [ngClass]="getStatusClasses(server)">
-          <strong>{{ server.name | shorten }}</strong> |
+        <li class="list-group-item" *ngFor="let server of servers | filter:filteredStatus:'status'"
+         [ngClass]="getStatusClasses(server)">
+          <strong>{{ server.name | shorten:15 }}</strong> |
             {{ server.instanceType | uppercase }} |
             {{ server.started | date:'fullDate' | uppercase }}
             <span class="badge badge-pill badge-info">
