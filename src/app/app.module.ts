@@ -26,6 +26,7 @@ import { AuthGuard } from './app-route-guard.service';
 import { FormComponent } from './code-examples/form/form.component';
 import { FormReactiveComponent } from './code-examples/form-reactive/form-reactive.component';
 import { RecipeService } from './recipes/recipe.service';
+import { PipesComponent } from './code-examples/pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { RecipeService } from './recipes/recipe.service';
     ErrorPageComponent,
     FormComponent,
     FormReactiveComponent,
+    PipesComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthGuard } from './app-route-guard.service';
 import { FormComponent } from './code-examples/form/form.component';
 import { FormReactiveComponent } from './code-examples/form-reactive/form-reactive.component';
+import { PipesComponent } from './code-examples/pipes/pipes.component';
 
 const appRouts: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -23,6 +24,7 @@ const appRouts: Routes = [
   { path: 'examples', component: CodeExamplesComponent, children: [
     { path: 'form', component: FormComponent },
     { path: 'form-reactive', component: FormReactiveComponent },
+    { path: 'pipes', component: PipesComponent },
   ]},
   { path: 'examples/:option', canActivate: [AuthGuard], component: CodeExamplesComponent },
   { path: 'shopping-list', component: ShoppingListComponent},
