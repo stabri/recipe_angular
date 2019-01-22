@@ -13,6 +13,7 @@ import { FormComponent } from './code-examples/form/form.component';
 import { FormReactiveComponent } from './code-examples/form-reactive/form-reactive.component';
 import { PipesComponent } from './code-examples/pipes/pipes.component';
 import { HttpComponent } from './code-examples/http/http.component';
+import { SinginComponent } from './auth/singin/singin.component';
 
 const appRouts: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -30,6 +31,7 @@ const appRouts: Routes = [
   ]},
   { path: 'examples/:option', canActivate: [AuthGuard], component: CodeExamplesComponent },
   { path: 'shopping-list', component: ShoppingListComponent},
+  { path: 'singup', component: SinginComponent},
   { path: '**', component: ErrorPageComponent},
 
 ]

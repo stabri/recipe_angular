@@ -33,6 +33,8 @@ import { FilterPipe } from './code-examples/pipes/filter.pipe';
 import { HttpComponent } from './code-examples/http/http.component';
 import { ServersService } from './servers.service';
 import { RecipePersistanceService } from './recipe-persistance.service';
+import { SinginComponent } from './auth/singin/singin.component';
+import { SingoutComponent } from './auth/singout/singout.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { RecipePersistanceService } from './recipe-persistance.service';
     ShortenPipe,
     FilterPipe,
     HttpComponent,
+    SinginComponent,
+    SingoutComponent,
   ],
   imports: [
     BrowserModule,
