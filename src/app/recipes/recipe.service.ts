@@ -4,12 +4,14 @@ import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Subject } from 'rxjs';
+import { RecipePersistanceService } from '../recipe-persistance.service';
 
 @Injectable()
 export class RecipeService {
 
   recipesChanged = new Subject<Recipe[]>();
-  constructor(private shoppingListService: ShoppingListService) { }
+  constructor(private shoppingListService: ShoppingListService,
+              private recipePersistanceService: RecipePersistanceService) { }
 
   private recipes: Recipe[] = [
     new Recipe('Tuna Salat', 'This is a awesome tuna salat',
@@ -51,5 +53,26 @@ export class RecipeService {
     this.recipesChanged.next(this.recipes.slice());
   }
 
+  persistRecipes(){
+    this.recipePersistanceService.storeRecipes(this.recipes)
+      .subscribe(
+        (result) => console.log(result),
+        (error) => console.log(error)
+      );
+  }
+
+  fetchRecipes(){
+    this.recipePersistanceService.fetchRecipes()
+      .subscribe(
+        (result: any[]) => {
+          this.recipes = [];
+          result.forEach(variable => {
+              this.recipes.push(variable)
+          });
+        },
+        (error) => console.log(error)
+      );
+      this.recipesChanged.next(this.recipes.slice());
+  }
 
 }

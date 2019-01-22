@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { RecipeService } from '../recipes/recipe.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,13 @@ import { Component } from "@angular/core";
 })
 
 export class HeaderComponent {
-  constructor(){}
+  constructor(private recipeService: RecipeService){}
+
+  onSaveRecipes(){
+    this.recipeService.persistRecipes();
+  }
+
+  onFetchRecipes(){
+    this.recipeService.fetchRecipes();
+  }
 }

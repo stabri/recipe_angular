@@ -32,6 +32,7 @@ import { ShortenPipe } from './code-examples/pipes/shorten.pipe';
 import { FilterPipe } from './code-examples/pipes/filter.pipe';
 import { HttpComponent } from './code-examples/http/http.component';
 import { ServersService } from './servers.service';
+import { RecipePersistanceService } from './recipe-persistance.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { ServersService } from './servers.service';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [ShoppingListService, AuthService, AuthGuard, RecipeService, ServersService],
+  providers: [ShoppingListService, AuthService, AuthGuard, RecipeService, ServersService, RecipePersistanceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
