@@ -29,7 +29,7 @@ import {RecipePersistanceService} from './recipe-persistance.service';
 import {SinginComponent} from './auth/singin/singin.component';
 import {SingoutComponent} from './auth/singout/singout.component';
 import {RecipesModule} from "./recipes/recipes.module";
-import {DropDownDirective} from "./shared-directives/structural-directives/dropdown.directive";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -49,7 +49,6 @@ import {DropDownDirective} from "./shared-directives/structural-directives/dropd
     UnlessDirective,
     BetterHightlightsDirective,
     HightlightHostBindingDirective,
-    DropDownDirective,
     ShortenPipe,
     FilterPipe
   ],
@@ -60,6 +59,7 @@ import {DropDownDirective} from "./shared-directives/structural-directives/dropd
     RecipesModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   providers: [ShoppingListService, AuthService, AuthGuard, RecipeService, ServersService, RecipePersistanceService],
   bootstrap: [AppComponent]
