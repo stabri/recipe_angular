@@ -10,9 +10,11 @@ import {FormReactiveComponent} from './code-examples/form-reactive/form-reactive
 import {PipesComponent} from './code-examples/pipes/pipes.component';
 import {HttpComponent} from './code-examples/http/http.component';
 import {SinginComponent} from './auth/singin/singin.component';
+import {HomeComponent} from "./home/home.component";
 
 const appRouts: Routes = [
-  {path: '', redirectTo: '/recipes', pathMatch: 'full'},
+  {path: '', component: HomeComponent},
+  {path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'},
   {path: 'singup', component: SinginComponent},
   {path: '**', component: ErrorPageComponent},
 
