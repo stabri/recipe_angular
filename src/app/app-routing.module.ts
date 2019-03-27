@@ -13,16 +13,6 @@ import {SinginComponent} from './auth/singin/singin.component';
 
 const appRouts: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch: 'full'},
-  {
-    path: 'examples', component: CodeExamplesComponent, children: [
-      {path: 'form', component: FormComponent},
-      {path: 'form-reactive', component: FormReactiveComponent},
-      {path: 'pipes', component: PipesComponent},
-      {path: 'http', component: HttpComponent},
-    ]
-  },
-  {path: 'examples/:option', canActivate: [AuthGuard], component: CodeExamplesComponent},
-  {path: 'shopping-list', component: ShoppingListComponent},
   {path: 'singup', component: SinginComponent},
   {path: '**', component: ErrorPageComponent},
 
